@@ -14,3 +14,45 @@ html,body{height:100%;overflow:hidden}
 .fixed-controls .reward{margin-bottom:9px}
 .app>footer{flex:0 0 auto;padding:9px 0 2px}
 @media(max-height:580px){.app>footer{display:none}.fixed-controls .panel{max-height:35dvh}}
+
+
+/* v3: keep compact controls visible, but never trap an expanded add form.
+   The entire content viewport scrolls while creating a new item; existing
+   cards remain below the form and cannot squeeze its action buttons. */
+#view:not(.form-open) .fixed-controls{
+  flex:0 0 auto;
+  max-height:65%;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+#view:not(.form-open) .scroll-area{flex:1 1 auto;min-height:0}
+#view.form-open{
+  overflow-y:auto;
+  overflow-x:hidden;
+  overscroll-behavior-y:contain;
+  display:block;
+  scrollbar-width:thin;
+  padding-bottom:24px;
+}
+#view.form-open .fixed-controls{
+  overflow:visible;
+  max-height:none;
+  min-height:0;
+  border-bottom:1px solid #405064;
+  padding-bottom:10px;
+}
+#view.form-open .fixed-controls .panel{
+  max-height:none;
+  overflow:visible;
+}
+#view.form-open .scroll-area{
+  overflow:visible;
+  max-height:none;
+  min-height:0;
+  padding-top:10px;
+}
+#view.form-open .fixed-controls input{scroll-margin-bottom:90px}
+#view.form-open .actions{scroll-margin-bottom:90px}
+@media(max-height:580px){
+  #view:not(.form-open) .fixed-controls{max-height:70%}
+}
