@@ -1,8 +1,8 @@
-My Homescapes - Android PWA
+My Trophy - Android PWA
 
 GitHub Pagesで公開する手順:
 1. GitHubのブラウザ版で新しいPublicリポジトリを作成。
-2. このフォルダ内の7ファイル（index.html, style.css, app.js, sw.js, manifest.webmanifest, icon-192.png, icon-512.png）をリポジトリの最上位へアップロード。
+2. このフォルダ内の8ファイル（index.html, style.css, app.js, sw.js, manifest.webmanifest, icon-192.png, icon-512.png）をリポジトリの最上位へアップロード。
 3. Settings > Pages > Build and deployment > Deploy from a branch を選択。Branch: main、Folder: /(root) を保存。
 4. Pagesに表示されたHTTPS URLをAndroidのChromeで開き、メニューから「ホーム画面に追加」または「アプリをインストール」。
 5. データは各端末のブラウザ内に保存。設定（歯車）からJSONバックアップを定期的に書き出してください。
@@ -10,10 +10,26 @@ GitHub Pagesで公開する手順:
 注意: GitHub Pagesで公開するコードは誰でも閲覧可能です。タスクデータ自体はアップロードされず、端末内に保存されます。アプリ削除・ブラウザデータ削除などで消えることがあるのでバックアップ必須です。
 
 Ver.2: PROJECTS/STEPSの上部操作エリアを固定、一覧を独立スクロール、完了STEPを下へ自動整列。保存キーとバックアップ形式はVer.1と共通。
-GitHubではZIPをそのまま置かず、real-homescapesフォルダ内の8ファイルをリポジトリ直下へアップロードして既存ファイルを置き換えてください。更新後はアプリを再起動してください。
+GitHubではZIPをそのまま置かず、展開したフォルダ内の8ファイルをリポジトリ直下へアップロードして既存ファイルを置き換えてください。更新後はアプリを再起動してください。
 
 Ver.3 修正 (2026-11-03)
 - PROJECTS / STEPS の新規追加フォームを開いたときは、固定領域に閉じ込めず、画面本文全体をスクロール可能にします。
 - 既存の項目一覧は入力フォームの下に配置され、件数が増えてもフォームの保存・キャンセルを隠しません。
 - 通常表示は上部操作エリアを保持し、一覧を独立スクロール。STEP完了時の下方移動も維持します。
 - 保存キーおよびバックアップ形式は変更していません。
+
+
+Ver.4 (2026-11-03)
+- 新規PROJECT/STEPと編集を専用入力画面に変更。背後の一覧は表示しません。
+- 入力時はプロジェクト情報を隠し、保存ボタンを入力欄の近くに配置。
+- タイトル/家アイコンを押すとPROJECTSに戻ります。未保存の変更は破棄確認。
+- PROJECTSへ戻るボタンと既存のデータ保存形式は維持。
+- キャッシュ名をv4に変更してPWAの更新を促進。
+
+Ver.5 - My Trophy 改名版 (2026-11-03)
+- 画面タイトルとAndroid表示名をMy Trophyへ変更。
+- アイコンを金色のトロフィーに変更。
+- バックアップ出力ファイル名をmy-trophy-backup-YYYY-MM-DD.jsonへ変更。
+- 既存の保存キー real-homescapes-v1 とバックアップ内の識別子 real-homescapes は互換性のため変更しません。
+- GitHubリポジトリ名や公開URLは変更不要です。
+- Android側のアプリ表示名/アイコンが更新されない場合は、JSONバックアップ後にアプリを再インストールしてください。

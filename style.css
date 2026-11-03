@@ -56,3 +56,13 @@ html,body{height:100%;overflow:hidden}
 @media(max-height:580px){
   #view:not(.form-open) .fixed-controls{max-height:70%}
 }
+
+/* v4: dedicated, scrollable entry view; no background controls. */
+.home-button{background:transparent;border:0;color:inherit;text-align:left;padding:0;cursor:pointer;min-height:48px;min-width:0}
+.home-button:focus-visible{outline:2px solid #d9b77a;outline-offset:4px;border-radius:6px}
+#view.entry-mode{display:block;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;padding-top:10px;padding-bottom:16px}
+.entry-screen{min-height:0;padding:0 2px 30px}
+.entry-panel{margin:0;padding:14px}
+.entry-panel .actions{margin-top:14px}
+.entry-panel input{scroll-margin-bottom:90px}
+@media(max-height:450px){.app>header{padding-bottom:6px}.app>footer{display:none}#view.entry-mode{padding-top:4px}.entry-panel{padding:10px}.entry-panel label{margin-top:4px}.entry-panel input{min-height:40px;padding:8px}.entry-panel .actions{margin-top:8px}}
